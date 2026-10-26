@@ -4,20 +4,8 @@
     box-sizing: border-box;
 }
 
-/* ==========================================================
-   Alexander Zerr | Seguridad e Higiene
-   Hoja de estilos principal
-   ----------------------------------------------------------
-   La regla universal de arriba resetea margin y padding del
-   navegador. box-sizing: border-box hace que padding y border
-   se resten del ancho, sin agrandar las cajas.
-   ========================================================== */
-
 
 /* ---------- Variables y paleta de colores ---------- */
-/* Primario: azul petróleo (confianza, entorno industrial)
-   Secundario: gris azulado claro (fondos de apoyo)
-   Acento: amarillo de señalización de seguridad (elementos destacados) */
 
 :root {
     --color-primary: #1f3a4d;
@@ -32,7 +20,6 @@
 
 
 /* ---------- Tipografía y estilos generales ---------- */
-/* Montserrat para los títulos y Roboto para el texto (máximo dos familias). */
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -52,7 +39,6 @@ h3 {
     color: var(--color-primary);
 }
 
-/* clamp(): el h1 se adapta al ancho de pantalla entre 2rem y 2.75rem. */
 h1 {
     font-size: clamp(2rem, 6vw, 2.75rem);
 }
@@ -77,9 +63,6 @@ a {
 
 
 /* ---------- Estructura general de la página (CSS Grid) ---------- */
-/* Mobile-first: la grilla del body tiene una sola columna y tres
-   áreas nombradas, una por fila. El contenido (1fr) toma el espacio
-   que sobra entre el encabezado y el pie. */
 
 body {
     display: grid;
@@ -105,9 +88,6 @@ main {
 
 
 /* ---------- Encabezado y navegación (Flexbox) ---------- */
-/* El header es el contenedor flex: la marca queda en un extremo y
-   el menú en el otro (space-between), centrados en vertical.
-   En celular (base) se apilan en columna; desde 768px pasan a fila. */
 
 .encabezado {
     display: flex;
@@ -154,8 +134,6 @@ main {
     color: var(--color-primary);
 }
 
-/* Página actual del menú: al estar escrita después de .menu-enlace
-   y tener la misma especificidad, la cascada aplica este color. */
 .activo {
     color: var(--color-text);
     background-color: var(--color-accent);
@@ -168,8 +146,6 @@ main {
     padding: 20px;
 }
 
-/* Cada sección es un contenedor flex en columna: gap separa los
-   elementos internos y margin-bottom separa una sección de la otra. */
 section {
     display: flex;
     flex-direction: column;
@@ -177,8 +153,6 @@ section {
     margin-bottom: 40px;
 }
 
-/* Presentación: en celular, texto arriba e imagen abajo (columna).
-   Desde 768px pasa a fila (ver Media Queries). */
 .presentacion {
     align-items: center;
     gap: 30px;
@@ -214,9 +188,6 @@ figure {
     background-color: var(--color-accent);
 }
 
-/* Tarjetas: grilla responsiva sin media queries. Cada columna mide
-   como mínimo 250px y crece en partes iguales (1fr); auto-fit pone
-   tantas columnas como entren en el ancho disponible. */
 .tarjetas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -233,7 +204,6 @@ figure {
     border-top: 4px solid var(--color-accent);
 }
 
-/* Empuja el enlace al fondo de la tarjeta. */
 .enlace-final {
     margin-top: auto;
 }
@@ -253,8 +223,6 @@ figure {
 
 /* ---------- Imágenes y sus descripciones ---------- */
 
-/* Las imágenes ocupan el ancho de su contenedor. El logo mantiene
-   su tamaño porque .logo (clase) tiene más especificidad que img. */
 img {
     width: 100%;
 }
@@ -307,7 +275,6 @@ figcaption {
 
 
 /* ---------- Media Queries (mobile-first) ---------- */
-/* Breakpoints: 768px (tablets) y 1024px (laptops). */
 
 @media (min-width: 768px) {
     .encabezado,
@@ -315,7 +282,6 @@ figcaption {
         flex-direction: row;
     }
 
-    /* La presentación pasa a fila: el texto toma 2 partes y la imagen 1. */
     .presentacion {
         flex-direction: row;
         gap: 40px;
